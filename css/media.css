@@ -1,0 +1,10 @@
+@media only screen  and (max-width:700px){
+    .dwn-btn{
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .ticket{
+        overflow-x: hidden;
+    }
+    
+}

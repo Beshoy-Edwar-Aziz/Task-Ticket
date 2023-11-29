@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تذاكر</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <!-- Page's header including coupon ticket and chart -->
+    <main>
+    <header class="neo-sans-arabic">
+        <div class="container">
+            <div class="d-flex justify-content-between ">
+                <div>
+                <button class="editBtn fw-400 p-2 rounded">تعديل <i class="fas fa-edit editClr"></i></button>
+                </div>
+            <div class="d-flex align-items-center gap-2 ">
+                <p class="fw-bold translate">تذكرة رقم #2342</p>
+                <button class="backBtn rounded d-flex justify-content-center align-items-center p-2"><img src="./assets/img/arrow-right.svg" alt="arrow"></button>
+            </div>
+            </div>
+            <!-- ---------------------------------------------------------------- -->
+            <!-- Ticket and Chart -->
+        <div class="row gy-2">
+            <div class="col-md-5">
+                <div class="mt-5">
+                    <!-- Ticket -->
+                <div class="ticket position-relative rounded-2">
+                    <div class="container py-2">
+                        <i class="fas fa-trash text-white" data-bs-toggle="tooltip" data-bs-title="حذف" data-bs-placement="bottom"></i>
+                        <p class="text-center fw-500 text-white">عرض التذكرة الخاصة بالفيلم</p>
+                        <div class="input-group mb-3 w-75 mx-auto">
+                            <span class="input-group-text editClr rounded-0" id="basic-addon1"><i class="fas fa-copy"></i></span>
+                            <input type="text" class="form-control text-center fw-500 inter rounded-0" value="www.tazkty.com/473847">
+                          </div>
+                          <p class="text-center text-white fs-12">فعال حتي 15 يوليو 2023</p>
+                    </div>
+                    <div class="circle1 translate-middle-y ">
+
+                    </div>
+                    
+                    <div class="circle2 translate-middle-y ">
+
+                    </div>
+                    <div class="dashedLine translate-middle-y translate-middle-x  ">
+                        <img src="assets/img/Vector 2.svg" alt="تذكرتي">
+                    </div>  
+                    <div class="card-bottom container d-flex justify-content-between px-3 py-2">
+                        <div>
+                            <img src="assets/img/qr_img 1.svg" alt="qrتذكرتي">
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center gap-3 mt-4">
+                                <button class="subscribeBtn mt-3">مشاركة <img src="./assets/img/send-subscribe.svg" alt=""></button>
+                               <div class="d-flex flex-column">
+                                <p class="text-white fw-400 fs-14 align-self-center mb-0">خصم</p>
+                                <p class="text-white fs-18 fw-500 mb-0">25%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+                
+            </div>
+            <!-- ---------------------------------------------------------------- -->
+            <!-- Chart -->
+            <div class="col-md-7">
+                <div class="d-flex justify-content-between flex-lg-row flex-column align-items-end">
+                    <div>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm rounded bg-body-secondary text-dark px-2 border-0 " type="button" data-bs-toggle="dropdown">
+                             <i class="fa-solid fa-caret-down text-secondary"></i> سنويا
+                            </button>
+                            <ul class="dropdown-menu text-center">
+                              <li>شهريا</li>
+                              <li>يوميا</li>
+                            </ul>
+                          </div>
+                    </div>
+                    <div>
+                        <h5 class="fw-500">إحصائيات إستخدام القسيمة</h5>
+                        <div class="d-flex gap-2 align-items-center">
+                        <i class="fa-solid fa-caret-down text-secondary translate-middle-y"></i><p class="direction text-secondary fs-14">05 يوليو , 2023 - 05 أغسطس , 2023 </p>
+                    </div>
+                    </div>
+                    
+                </div>
+                <div id="myChart">
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <!-- table section -->
+    <section class="neo-sans-arabic">
+        <div class="container">
+        <!-- Search Bar -->
+            <div class="d-flex justify-content-end gap-2">
+                <button class="d-flex justify-content-center align-items-center border ticket-sale-btns"><img src="assets/img/arrow-3.svg" alt="تذكرتي"></button>
+                <button class="d-flex justify-content-center align-items-center border ticket-sale-btns"><img src="assets/img/setting-4.svg" alt="تذكره"></button>
+            <div class="input-group mb-3 w-25 border border-1  rounded-1 ">
+                <input type="text" class="form-control text-start fw-500 text-secondary fs-14 direction" placeholder="بحث عن...">
+                <span class="input-group-text inp-group-text-edit border-end editClr" id="basic-addon1"><i class="fas fa-magnifying-glass"></i></span>
+            </div>
+            <p class="align-self-center fw-500 fs-16">مبيعات التذاكر</p>
+        </div>
+<!-- ------------------------------------------------- -->
+        <!-- table -->
+        <div class="overflow-x-auto">
+        <table class="table table-hover text-center overflow-auto">
+            
+            <thead class="fs-14 table-secondary">
+                <tr>
+                <th class="text-secondary rounded-end">التذكرة</th>
+                <th class="text-nowrap text-secondary">عدد مرات الشراء</th>
+                <th class="text-nowrap text-secondary">عدد الأشخاص</th>
+                <th class="text-secondary">السينمات</th>
+                <th class="direction text-nowrap text-secondary">قيمى التذكرة <img src="assets/img/arrow-3.svg" alt="تذكرتي"></th>
+                <th class="text-nowrap text-secondary">رقم التذكرة</th>
+                <th class="text-secondary">المستخدم</th>
+                <th class="text-secondary rounded-start">#</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="dwn-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="direction fs-11 text-nowrap ">تذكرة رقم 45.pdf</p>
+                            <p class="text-secondary fs-10">9MB.PDF</p>
+                        </div>
+                        <div class="col-md-4 px-0">
+                            <button class="ticket-table-btn">
+                                <img src="assets/img/ticket-2.svg" alt="تذاكر">
+                            </button>
+                        </div>
+                        
+                    </div>
+                    </td>
+                    <td class="fs-14">مرة واحدة</td>
+                    <td class="fs-14">1</td>
+                    <td class="direction text-nowrap fs-14">سينما مصر , مول العرب , برج الأطنان , سرايا القبة <span data-bs-toggle="tooltip" data-bs-title="صيدناوي مول, برج العرب" data-bs-placement="bottom">...</span></td>
+                    <td class="fs-14">$40</td>
+                    <td class="fs-14">C-101</td>
+                    <td class="d-flex direction gap-2 pb-4">
+                        <img src="assets/img/Avatar/Group 1000009196.svg" class="mb-2" alt="تذكرة">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="text-nowrap mb-0">أحمد محمود</p>
+                            <p class="text-secondary fs-10">0123456789</p>
+                        </div>
+                    </td>
+                    <td class="fs-14">1</td>
+                </tr>
+                <tr>
+                    <td>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="dwn-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="direction fs-11 text-nowrap ">تذكرة رقم 45.pdf</p>
+                            <p class="text-secondary fs-10">9MB.PDF</p>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="ticket-table-btn">
+                                <img src="assets/img/ticket-2.svg" alt="تذاكر">
+                            </button>
+                        </div>
+                        
+                    </div>
+                    </td>
+                    <td class="fs-14">مرة واحدة</td>
+                    <td class="fs-14">1</td>
+                    <td class="direction fs-14">سينما مصر , مول العرب , برج الأطنان , سرايا القبة </td>
+                    <td class="fs-14">$30</td>
+                    <td class="fs-14">C-102</td>
+                    <td class="d-flex direction gap-2 pb-4">
+                        <img src="assets/img/Avatar/Image-30.svg" class="mb-2" alt="تذكرة">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="text-nowrap mb-0">محمد الغريب</p>
+                            <p class="text-secondary fs-10">0123456789</p>
+                        </div>
+                    </td>
+                    <td class="fs-14">1</td>
+                </tr>
+                <tr>
+                    <td>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="dwn-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="direction fs-11 text-nowrap ">تذكرة رقم 45.pdf</p>
+                            <p class="text-secondary fs-10">9MB.PDF</p>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="ticket-table-btn">
+                                <img src="assets/img/ticket-2.svg" alt="تذاكر">
+                            </button>
+                        </div>
+                        
+                    </div>
+                    </td>
+                    <td class="fs-14">مرة واحدة</td>
+                    <td class="fs-14">1</td>
+                    <td class="direction fs-14">سينما مصر , مول العرب , برج الأطنان , سرايا القبة </td>
+                    <td class="fs-14">$45</td>
+                    <td class="fs-14">C-102</td>
+                    <td class="d-flex direction gap-2 pb-4">
+                        <img src="assets/img/Avatar/Image-301.svg" class="mb-2" alt="تذكرة">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="text-nowrap mb-0">محمد الغريب</p>
+                            <p class="text-secondary fs-10">0123456789</p>
+                        </div>
+                    </td>
+                    <td class="fs-14">1</td>
+                </tr>
+                <tr>
+                    <td>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="dwn-btn"><i class="fas fa-download"></i></button>
+                        </div>
+                        <div class="col-md-4">
+                            <p class="direction fs-11 text-nowrap ">تذكرة رقم 45.pdf</p>
+                            <p class="text-secondary fs-10">9MB.PDF</p>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="ticket-table-btn">
+                                <img src="assets/img/ticket-2.svg" alt="تذاكر">
+                            </button>
+                        </div>
+                        
+                    </div>
+                    </td>
+                    <td class="fs-14">مرة واحدة</td>
+                    <td class="fs-14">1</td>
+                    <td class="direction fs-14">سينما مصر , مول العرب , برج الأطنان , سرايا القبة </td>
+                    <td class="fs-14">$54</td>
+                    <td class="fs-14">C-103</td>
+                    <td class="d-flex direction gap-2 pb-4">
+                        <img src="assets/img/Avatar/Group 1000009196 (1).svg" class="mb-2" alt="تذكرة">
+                        <div class="d-flex flex-column justify-content-center">
+                            <p class="text-nowrap mb-0">محمد الغريب</p>
+                            <p class="text-secondary fs-10">0123456789</p>
+                        </div>
+                    </td>
+                    <td class="fs-14">1</td>
+                </tr>
+                
+                    
+                
+            </tbody>
+            
+        </table>
+    </div>
+        <div class="d-flex justify-content-between  flex-column align-items-center flex-lg-row mt-lg-0 mt-3">
+                <div>
+                    <nav class="inter">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <i class="fas fa-arrow-left"></i>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">5</a></li>
+                          <li class="page-item"><a class="page-link" href="#">4</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                </div>
+            <div class="direction me-lg-0 me-5 mt-lg-0 mt-3 translate-middle-y">
+                <span class="fw-400 fs-10">عرض</span>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-sm rounded bg-body-secondary fw-400 fs-10 text-dark px-2 border-0 " type="button" data-bs-toggle="dropdown">
+                     <i class="fa-solid fa-caret-down text-secondary"></i> 20
+                    </button>
+                    <ul class="dropdown-menu text-center">
+                      <li>50</li>
+                      <li>100</li>
+                    </ul>
+                </div>
+                <span class="fw-400 fs-10">من اصل 250</span>
+            </div>
+        </div>
+        </div>
+    </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>   
+    <script src="js/main.js"></script>
+</body>
+</html>
